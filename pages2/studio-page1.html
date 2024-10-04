@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Page 01</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Customizing the thumb to green */
+        .slider::-webkit-slider-thumb {
+            @apply w-[18px] h-[18px] bg-green-500 rounded-full cursor-pointer;
+            appearance: none;
+        }
+
+        .slider::-moz-range-thumb {
+            @apply w-5 h-5 bg-green-500 rounded-full cursor-pointer;
+        }
+
+        /* Initial track styles */
+        .slider {
+            @apply w-[50%] h-1 rounded-lg appearance-none cursor-pointer;
+        }
+
+        /* Hide the original track to show the custom gradient background */
+        .slider::-webkit-slider-runnable-track,
+        .slider::-moz-range-track {
+            @apply bg-red-600;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-truegray-800 dark:bg-truegray-800 dark:text-white box-border">
+
+    <!-- HEADER SECTION -->
+    <header
+        class="dark:bg-truegray-900 bg-truegray-100 dark:text-truegray-50 flex items-center py-2 fixed top-[0]  w-full z-20 h-auto px-4">
+        <!-- LOGO -->
+        <div class="flex xxl:me-16 me-3">
+            <img src="../images/logo.png" alt="logo" class="w-8 h-8">
+            <span class="text-2xl font-semibold ms-2">Galerie Munk</span>
+        </div>
+        <!-- LINKS -->
+        <div class="ms-8">
+            <ul class="xl:flex hidden togglable">
+                <li class="me-6 relative">
+                    <button id="dropdownDelayButton1" data-dropdown-toggle="dropdown1" data-dropdown-delay="500"
+                        data-dropdown-trigger="hover"
+                        class="text-coolgray-900 dark:text-truegray-50 text-center inline-flex items-center"
+                        type="button">
+                        ÖLGEMÄLDE
+                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                    <ul id="dropdown1"
+                        class="dropdown-menu hidden absolute bg-white shadow-lg z-10 dark:bg-white dark:text-truegray-800">
+                        <li class="p-2 hover:bg-gray-100"><a href="./pages/kunstdrucke.html"
+                                target="_blank">kunstdrucke</a>
+                        </li>
+                        <li class="p-2 hover:bg-gray-100"><a href="./pages/kunstler.html" target="_blank">kunstler</a>
+                        </li>
+                        <li class="p-2 hover:bg-gray-100">Option 3</li>
+                    </ul>
+                </li>
+                <li class="me-6 relative">
+                    <button id="dropdownDelayButton2" data-dropdown-toggle="dropdown2" data-dropdown-delay="500"
+                        data-dropdown-trigger="hover"
+                        class="text-coolgray-900 dark:text-truegray-50 text-center inline-flex items-center"
+                        type="button">
+                        KUNSTDRUCKE
+                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                    <ul id="dropdown2"
+                        class="dropdown-menu hidden absolute bg-white shadow-lg z-10 dark:bg-white dark:text-truegray-800">
+                        <li class="p-2 hover:bg-gray-100">Option 1</li>
+                        <li class="p-2 hover:bg-gray-100">Option 2</li>
+                        <li class="p-2 hover:bg-gray-100">Option 3</li>
+                    </ul>
+                </li>
+                <li class="me-6 relative">
+                    <button id="dropdownDelayButton3" data-dropdown-toggle="dropdown3" data-dropdown-delay="500"
+                        data-dropdown-trigger="hover"
+                        class="text-coolgray-900 dark:text-truegray-50 text-center inline-flex items-center"
+                        type="button">
+                        SAMMLUNGEN
+                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                    <ul id="dropdown3"
+                        class="dropdown-menu hidden absolute bg-white shadow-lg z-10 dark:bg-white dark:text-truegray-800">
+                        <li class="p-2 hover:bg-gray-100">Option 1</li>
+                        <li class="p-2 hover:bg-gray-100">Option 2</li>
+                        <li class="p-2 hover:bg-gray-100">Option 3</li>
+                    </ul>
+                </li>
+                <li class="relative">
+                    <button id="dropdownDelayButton4" data-dropdown-toggle="dropdown4" data-dropdown-delay="500"
+                        data-dropdown-trigger="hover"
+                        class="text-coolgray-900 dark:text-truegray-50 text-center inline-flex items-center"
+                        type="button">
+                        INFOS
+                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                    <ul id="dropdown4"
+                        class="dropdown-menu hidden absolute bg-white shadow-lg z-10 dark:bg-white dark:text-truegray-800">
+                        <li class="p-2 hover:bg-gray-100">Option 1</li>
+                        <li class="p-2 hover:bg-gray-100">Option 2</li>
+                        <li class="p-2 hover:bg-gray-100">Option 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- LOGIN -->
+        <div class="xl:flex hidden togglable ms-auto me-6">
+            <p class="me-4">Kontakt</p>
+            <p>Login</p>
+        </div>
+        <div class="xl:ms-[0] ms-auto xl:divide-x divide-truegray-300 flex items-center">
+            <i class="fa-solid fa-phone me-6 xl:inline hidden togglable"></i>
+            <i class="fa-solid fa-magnifying-glass me-6 ps-4"></i>
+            <i class="fa-solid fa-cart-shopping me-6 xl:ps-4 ps-0"></i>
+            <i class="fa-solid fa-heart me-6 ps-4 xl:inline hidden togglable"></i>
+        </div>
+        <label class="xl:inline-flex hidden togglable items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer" id="theme-toggle">
+            <div
+                class="relative w-11 h-6 bg-truegray-200 peer-focus:outline-none peer-focus:ring-4 dark:peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-truegray-700">
+                <span class="absolute left-1 top-[0.1rem] w-2 h-2 text-yellow-500"><i class="fas fa-sun"></i></span>
+                <span class="absolute right-1 top-[0.1rem] text-gray-500"><i class="fas fa-moon"></i></span>
+            </div>
+        </label>
+        <i class="fa-solid fa-bars text-[1.3rem] xl:hidden inline cursor-pointer" id="hamber"></i>
+    </header>
+    <!-- mobile -->
+    <div id="mobile-menu"
+        class="hidden fixed top-[0.5rem] left-[0] w-full h-[100vh] bg-truegray-200 dark:bg-truegray-900 dark:text-truegray-50 z-30">
+        <div class="flex flex-col mt-3 mx-2">
+
+            <div class="flex justify-between w-full mb-6">
+                <p class="self-start text-xl items-center font-bold">MENU</p>
+                <i class="fa-solid fa-xmark self-end text-xl items-center pe-4 font-bold" id="close"></i>
+            </div>
+
+            <div class="flex items-center pb-3">
+                <i class="fa-solid fa-phone text-green-600"></i>
+                <p class="ps-3 font-bold text-lg tracking-wider">+49 8221 31467</p>
+            </div>
+            <hr class="text-truegray-400 h-6 w-[95%]">
+            <li class="me-6 relative list-none">
+                <button id="dropdownDelayButton1" data-dropdown-toggle="dropdown1" data-dropdown-delay="500"
+                    data-dropdown-trigger="hover"
+                    class="text-coolgray-900 dark:text-truegray-50 text-center inline-flex items-center" type="button">
+                    ÖLGEMÄLDE
+                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <ul id="dropdown1" class="dropdown-menu hidden absolute bg-white shadow-lg z-10">
+                    <li class="p-2 hover:bg-gray-100">Option 1</li>
+                    <li class="p-2 hover:bg-gray-100">Option 2</li>
+                    <li class="p-2 hover:bg-gray-100">Option 3</li>
+                </ul>
+            </li>
+            <hr class="text-truegray-400 h-6 w-[95%]">
+            <li class="me-6 list-none">
+                <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500"
+                    data-dropdown-trigger="hover"
+                    class="text-coolgray-900 dark:text-truegray-50 text-center inline-flex items-center text-lg"
+                    type="button">
+                    KUNSTDRUCKE
+                    <svg class="w-2.5 h-2.5 ms-3 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+            </li>
+            <hr class="text-truegray-400 h-6 w-[95%]">
+            <li class="me-6 list-none">
+                <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500"
+                    data-dropdown-trigger="hover"
+                    class="text-coolgray-900 dark:text-truegray-50 text-center inline-flex items-center text-lg"
+                    type="button">
+                    SAMMLUNGEN
+                    <svg class="w-2.5 h-2.5 ms-3 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+            </li>
+            <hr class="text-truegray-400 h-6 w-[95%]">
+            <li class="me-6 list-none">
+                <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500"
+                    data-dropdown-trigger="hover"
+                    class="text-coolgray-900 dark:text-truegray-50 text-center inline-flex items-center text-lg"
+                    type="button">
+                    INFOS
+                    <svg class="w-2.5 h-2.5 ms-3 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+            </li>
+            <hr class="text-truegray-400 h-6 w-[95%]">
+            <div class="flex items-center mt-8">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p class="text-lg ps-2">Einkaufswagen (4)</p>
+            </div>
+            <div class="flex items-center mt-6">
+                <i class="fa-regular fa-heart"></i>
+                <p class="text-lg ps-2">Meine Pinnwand (3)</p>
+            </div>
+            <div class="flex items-center mt-6">
+                <i class="fa-solid fa-droplet"></i>
+                <p class="text-lg ps-2">Kontakt</p>
+            </div>
+            <div class="flex items-center mt-6 mb-32">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p class="text-lg ps-2">Login</p>
+            </div>
+
+            <div class="flex items-center mt-auto">
+                <label class="xl:hidden inline-flex togglable items-center cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer" id="theme-toggle">
+                    <div
+                        class="relative w-11 h-6 bg-truegray-100 peer-focus:outline-none peer-focus:ring-4 dark:peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-truegray-700">
+                        <span class="absolute left-1 top-[0.1rem] w-2 h-2 text-yellow-500"><i
+                                class="fas fa-sun"></i></span>
+                        <span class="absolute right-1 top-[0.1rem] text-gray-500"><i class="fas fa-moon"></i></span>
+                    </div>
+                </label>
+                <span class="ms-4 text-truegray-700 dark:text-truegray-200">Switch to light theme</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="lg:ps-4 ps-[0] mt-16 flex lg:flex-row flex-col">
+            <!-- SIDE HEADING SECTION -->
+            <section
+                class="w-[3%] h-[41.4rem] lg:flex hidden justify-center items-center text-green-600 border-2 border-green-600">
+                <div class="rotate-[90deg] font-semibold">Hintergrund</div>
+            </section>
+
+            <!-- HEADING SECTION -->
+            <section class="lg:w-[57%] mx-4 w-auto">
+                <div class="lg:block hidden">
+                    <h2 class="text-[2.2rem] mt-4 gradient-border-bottom font-mono">Water Lilies 1916-20</h2>
+                    <h2 class="text-[2.2rem] font-mono text-end">Monet, Claude</h2>
+                </div>
+                <!-- MOBILE SCREEN HEADING PORTION -->
+                 <div class="lg:hidden flex justify-between items-center">
+                    <h5 class="font-semibold">Monet, Claude: Nympheas Sunlight <br> Effect II</h5>
+                    <i class="fa-regular fa-image border-2 border-green-600 text-green-600 dark:text-white px-2 py-1 text-2xl"></i>
+                 </div>
+                <div class="mt-8">
+                    <img src="../images/studio-page1.png" alt="studio-page1" class="w-full h-auto">
+                </div>
+            </section>
+
+            <!-- STUDIO MENU SECTION -->
+            <section class="lg:w-[40%] w-full flex lg:flex-row flex-col shrink-0">
+                <!-- DIV 01 -->
+                <div class="lg:w-[30%] w-full lg:block flex lg:ms-[0] ms-4 lg:mt-[0] mt-8 lg:overflow-hidden overflow-auto lg:pb-[0] pb-6 lg:mb-[0] mb-12">
+                    <div class="bg-green-600 p-4 text-white shrink-0">
+                        <p>Größe ändern</p>
+                        <p class=""><i class="fa-solid fa-arrows-left-right"></i> <span class="text-end ms-3">120
+                                cm</span></p>
+                        <p class="mt-2"><i class="fa-solid fa-arrows-up-down"></i> <span class="ms-5">54 cm</span></p>
+                    </div>
+                    <div class="flex lg:flex-col flex-row gap-1 lg:w-[98%] w-auto h-auto flex-shrink-0 lg:mb-[0] mb-1 lg:ms-[0] ms-1">
+                        <div class="bg-truegray-200 dark:bg-truegray-700 p-4 shrink-0">
+                            <p class="font-medium">Material</p>
+                            <h5 class="font-bold my-1">180,24 €</h5>
+                            <p class="text-[14px] break-words">Künstlerleinwand <br>
+                                 mit Keilrahmen (2cm stark)</p>
+                        </div>
+                        <div class="bg-truegray-200 dark:bg-truegray-700 p-4 shrink-0">
+                            <p class="font-medium">Rahmen</p>
+                            <h5 class="font-bold my-1">88,40 €</h5>
+                            <img src="../images/studio1.png" alt="studio 1">
+                        </div>
+                        <div class="bg-truegray-200 dark:bg-truegray-700 p-4 shrink-0">
+                            <p class="font-medium">Einlage</p>
+                            <h5 class="font-bold my-1">24,40 €</h5>
+                            <img src="../images/studio2.png" alt="studio 2">
+                        </div>
+                        <div class="bg-truegray-200 dark:bg-truegray-700 p-4 shrink-0">
+                            <p class="font-medium">Glass</p>
+                            <h5 class="font-bold my-1">59,90 €</h5>
+                            <p class="text-[14px]">Plexiglas</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- DIV 02 -->
+                <div class="lg:w-[80%] w-auto bg-truegray-200 dark:bg-truegray-700 -mt-4 p-4 2xl:h-[43.5rem] lg:h-[48rem] h-auto lg:-ms-[0] -ms-4">
+                    <!-- ROW 01 -->
+                    <h3 class="font-bold lg:block hidden">Hier bestimmen Sie die Größe des Bildes <br>
+                        ohne Rahmen. <br>
+                        (Maximale Größe: 178 cm x 81 cm)</h3>
+                    <!-- ROW 02 BOTH -->
+                    <div class="lg:flex hidden items-center justify-evenly mt-6 ">
+                        <p class="flex items-center"><i class="fa-solid fa-arrows-left-right"></i> <span
+                                class="">Breite</span></p>
+                        <input type="range" min="0" max="100" value="50" class="slider w-[90%] mx-4 custom-range">
+                        <button class="bg-truegray-300 dark:bg-truegray-600 py-2 px-4">120 cm</button>
+                    </div>
+                    <div class="lg:flex hidden items-center justify-evenly mt-5">
+                        <p class="flex items-center"><i class="fa-solid fa-arrows-up-down"></i><span
+                                class="ms-[11px]">Höhe</span></p>
+                        <input type="range" min="0" max="100" value="50" class="slider w-[90%] mx-4 custom-range">
+                        <button class="bg-truegray-300 dark:bg-truegray-600 py-2 px-[18px]">54 cm</button>
+                    </div>
+                    <!-- ROW 03 -->
+                    <div class="lg:mt-8 mt-[0] overflow-auto pb-6">
+                        <h3 class="font-bold mb-2 lg:block hidden">Größe options</h3>
+                        <div class="flex lg:flex-wrap flex-nowrap gap-2 text-sm">
+                            <button class="lg:px-[22px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600 lg:hidden block"><i
+                                class="fa-solid fa-arrows-left-right me-2"></i> Custom</button>
+                            <button class="lg:px-[22px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 30 cm</button>
+                            <button class="lg:px-[22px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 40 cm</button>
+                            <button class="lg:px-[22px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 50 cm</button>
+                            <button class="lg:px-[22px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 60 cm</button>
+                            <button class="lg:px-[22px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 70 cm</button>
+                            <button class="lg:px-[22px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 80 cm</button>
+                            <button class="lg:px-[22px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 90 cm</button>
+                            <button class="lg:px-[19.1px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 100 cm</button>
+                            <button class="px-[19.1px] py-[14px] bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 110 cm</button>
+                            <button
+                                class="lg:px-[19.1px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap dark:bg-truegray-600 border-2 border-green-600 bg-green-600 bg-opacity-[20%]"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 120 cm</button>
+                            <button class="lg:px-[19.1px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 130 cm</button>
+                            <button class="lg:px-[19.1px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 140 cm</button>
+                            <button class="lg:px-[19.1px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 150 cm</button>
+                            <button class="lg:px-[19.1px] lg:py-[14px] px-[2rem] py-[3rem] whitespace-nowrap bg-truegray-300 dark:bg-truegray-600"><i
+                                    class="fa-solid fa-arrows-left-right me-2"></i> 160 cm</button>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <section class="bg-truegray-100 dark:bg-truegray-900 px-6 lg:py-6 py-4 lg:mt-[0] mt-4">
+        <div class="flex justify-between items-center">
+            <div class="font-semibold lg:block hidden">Gesamtpreis: <span>322,12 €</span> <span class="font-normal">(Lieferung frei)</span></div>
+            <!-- MOBILE DEVICE -->
+            <p class="font-bold lg:hidden block">322,12 €</p>
+            <div class="flex gap-2 items-center">
+                <button class="border-2 border-green-600 px-2 py-1 lg:block hidden"><i
+                        class="fa-solid fa-share-nodes text-xl text-green-600 dark:text-white"></i></button>
+                <button class="border-2 border-green-600 px-2 py-1 lg:block hidden"><i
+                        class="fa-regular fa-heart text-xl text-green-600 dark:text-white"></i></button>
+                <button class="text-white bg-green-600 px-4 py-2"><i class="fa-solid fa-cart-shopping me-1"></i> In den
+                    Einkaufswagen</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- JAVASCRIPT PORTION -->
+    <script>
+        // RANGE SLIDER
+        const rangeInputs = document.querySelectorAll('.custom-range');
+
+        function updateRangeBackground(rangeInput) {
+            const value = (rangeInput.value - rangeInput.min) / (rangeInput.max - rangeInput.min) * 100;
+            rangeInput.style.background = `linear-gradient(to right, #48bb78 ${value}%, #A3A3A3 ${value}%)`;
+        }
+
+        rangeInputs.forEach(rangeInput => {
+            rangeInput.addEventListener('input', () => updateRangeBackground(rangeInput));
+            // Initialize the background on page load
+            updateRangeBackground(rangeInput);
+        });
+
+
+        // SWITCH MODE BUTTON
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleSwitch = document.getElementById('theme-toggle');
+            const sunIcon = toggleSwitch.nextElementSibling.querySelector('.fa-sun').parentElement;
+            const moonIcon = toggleSwitch.nextElementSibling.querySelector('.fa-moon').parentElement;
+
+            const currentTheme = localStorage.getItem('theme');
+
+            if (currentTheme) {
+                document.documentElement.classList.toggle('dark', currentTheme === 'dark');
+                toggleSwitch.checked = currentTheme === 'dark';
+                sunIcon.classList.toggle('hidden', currentTheme === 'dark');
+                moonIcon.classList.toggle('hidden', currentTheme !== 'dark');
+            }
+
+            toggleSwitch.addEventListener('change', () => {
+                document.documentElement.classList.toggle('dark', toggleSwitch.checked);
+                localStorage.setItem('theme', toggleSwitch.checked ? 'dark' : 'light');
+                sunIcon.classList.toggle('hidden', toggleSwitch.checked);
+                moonIcon.classList.toggle('hidden', !toggleSwitch.checked);
+            });
+        });
+
+        // MOBILE BAR
+        document.getElementById('hamber').addEventListener('click', function () {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.getElementById('close').addEventListener('click', function () {
+            var closeButton = document.getElementById('mobile-menu');
+            closeButton.classList.toggle('hidden');
+        });
+
+        // DROPDOWN BUTTON
+
+    </script>
+</body>
