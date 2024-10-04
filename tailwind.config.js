@@ -2,36 +2,36 @@
 module.exports = {
   // mode: 'jit',
   darkMode: 'class',
-  content: [
-    // PAGE 01
-    "./index.html",
-    "./pages/kunstdrucke.html",
-    "./pages/kunstler.html",
-    "./pages/kunststile.html",
-    "./pages/themen.html",
-    "./pages/gemaelde_kunstler.html",
-    "./pages/shoppage_stil1.html",
-    "./pages/shoppage_stil2.html",
-    "./pages/shoppage-kuenstler.html",
-    "./pages/landschaft.html",
-    "./pages/details-page.html",
-    "./pages/details-page2.html",
-    "./pages/kuenstler_a-z.html",
-    "./pages/gelborange.html",
-    "./pages/bewertungen.html",
-    "./pages/druckmaterialien.html",
-    "./pages/sammlungen.html",
-    "./pages/modern-print.html",
-    "./pages/leinwandbild.html",
-    "./pages/artist-biography.html",
-    // PAGE 02
-    "./pages2/login.html",
-    "./pages2/studio-page1.html",
-    "./pages2/studio-page2.html",
-    "./pages2/studio-page3.html"
+  // content: [
+  //   // PAGE 01
+  //   "./index.html",
+  //   "./pages/kunstdrucke.html",
+  //   "./pages/kunstler.html",
+  //   "./pages/kunststile.html",
+  //   "./pages/themen.html",
+  //   "./pages/gemaelde_kunstler.html",
+  //   "./pages/shoppage_stil1.html",
+  //   "./pages/shoppage_stil2.html",
+  //   "./pages/shoppage-kuenstler.html",
+  //   "./pages/landschaft.html",
+  //   "./pages/details-page.html",
+  //   "./pages/details-page2.html",
+  //   "./pages/kuenstler_a-z.html",
+  //   "./pages/gelborange.html",
+  //   "./pages/bewertungen.html",
+  //   "./pages/druckmaterialien.html",
+  //   "./pages/sammlungen.html",
+  //   "./pages/modern-print.html",
+  //   "./pages/leinwandbild.html",
+  //   "./pages/artist-biography.html",
+  //   // PAGE 02
+  //   "./pages2/login.html",
+  //   "./pages2/studio-page1.html",
+  //   "./pages2/studio-page2.html",
+  //   "./pages2/studio-page3.html"
 
-  ],
-  // content:["*"],
+  // ],
+  content:["*"],
   theme: {
     colors: {
       red: {
